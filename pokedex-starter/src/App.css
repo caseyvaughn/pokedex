@@ -1,5 +1,5 @@
-main {
-  height: calc(100vh - 108px);
+.container-fluid {
+  height: calc(100vh - 98px);
   background-image: url("https://wallpapercave.com/wp/wp3800310.jpg");
   background-color: #f6e652;
   background-size: cover;
