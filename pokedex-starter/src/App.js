@@ -1,9 +1,9 @@
-import React from "react";
 import { Col, Container, Image, Nav, Navbar } from "react-bootstrap";
 
 import "./App.css";
 
 function App() {
+  // con
   return (
     <>
       <Navbar className="bg-dark d-flex justify-content-between px-5">
@@ -21,6 +21,7 @@ function App() {
           </Nav.Item>
         </Navbar.Brand>
         <Nav>
+          {/* TODO: search goes here! */}
         </Nav>
       </Navbar>
       <Container className="d-flex justify-content-center align-items-center" fluid>
@@ -31,7 +32,9 @@ function App() {
           sm={10}
           md={10}
           lg={10}
-        ></Col>
+        >
+        { /* TODO: results go here! */ }
+        </Col>
       </Container>
     </>
   );
