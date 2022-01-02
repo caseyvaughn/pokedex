@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Col, Container, Image, Nav, Navbar } from "react-bootstrap";
-// import PageLoad from "./components/PageLoad";
+import Form from "./components/Form";
+import PokeData from "./components/PokeData";
 
 import "./App.css";
 
@@ -40,6 +41,8 @@ function App() {
         </Navbar.Brand>
         <Nav>
           {/* TODO: search goes here! */}
+          <Form setNewSearch={setNewSearch} />
+          
         </Nav>
       </Navbar>
       <Container className="d-flex justify-content-center align-items-center" fluid>
@@ -51,7 +54,12 @@ function App() {
           md={10}
           lg={10}
         >
-        { /* TODO: results go here! */ }
+          { /* TODO: results go here! */}
+          <PokeData />
+          
+
+
+
         </Col>
       </Container>
     </>
