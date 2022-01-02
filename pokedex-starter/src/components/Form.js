@@ -20,6 +20,7 @@ function Form(props) {
         onChange={(e) => setPokemonName(e.target.value)}
 
         />
+        <input type = "submit" value="Find Pokemon"/>
       </form></>
   )
 

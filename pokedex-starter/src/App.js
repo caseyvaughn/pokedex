@@ -3,20 +3,23 @@ import axios from "axios";
 import { Col, Container, Image, Nav, Navbar } from "react-bootstrap";
 import Form from "./components/Form";
 import PokeData from "./components/PokeData";
+import PokemonList from "./components/PokemonList";
 
 import "./App.css";
 
 function App() {
   // 
 
-  const [pokeData, setPokeData] = useState({});
+  const [pokemon, setPokemon] = useState(["bulbasaur", "charmander"]);
+  // const [pokeData, setPokeData] = useState({});
   const [newSearch, setNewSearch] = useState("pikachu");
+
   useEffect(() => {
     // console.log("test for use effect");
     const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${newSearch}`;
     const makeApiCall = async () => {
       const res = await axios.get(pokeUrl);
-      setPokeData(res.data);
+      setPokemon(res.data);
     }
     makeApiCall();
   }) 
@@ -55,7 +58,8 @@ function App() {
           lg={10}
         >
           { /* TODO: results go here! */}
-          <PokeData />
+          <PokeData pokemon={pokemon} />
+          {/* <PokemonList pokemon={pokemon}/> */}
           
 
 
