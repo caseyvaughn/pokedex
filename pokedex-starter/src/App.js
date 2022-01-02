@@ -1,11 +1,29 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Col, Container, Image, Nav, Navbar } from "react-bootstrap";
+// import PageLoad from "./components/PageLoad";
 
 import "./App.css";
 
 function App() {
-  // con
+  // 
+
+  const [pokeData, setPokeData] = useState({});
+  const [newSearch, setNewSearch] = useState("pikachu");
+  useEffect(() => {
+    // console.log("test for use effect");
+    const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${newSearch}`;
+    const makeApiCall = async () => {
+      const res = await axios.get(pokeUrl);
+      setPokeData(res.data);
+    }
+    makeApiCall();
+  }) 
+
   return (
+    
     <>
+      {/* <PageLoad /> */}
       <Navbar className="bg-dark d-flex justify-content-between px-5">
         <Navbar.Brand className="d-flex align-items-center" href="https://pokeapi.co/">
           <Image
